@@ -15,5 +15,15 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
-<?php wp_open_body(); ?>
-<header>Header</header>
+<?php
+if (function_exists('wp_body_open')) {
+    wp_body_open();
+}
+?>
+
+<div>
+    <header>
+        <?php get_template_part('template-part/header/nav')?>
+    </header>
+    <div>
+
